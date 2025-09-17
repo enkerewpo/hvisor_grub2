@@ -1,0 +1,9 @@
+{
+	"rust-analyzer.linkedProjects": [
+		"./hvisor/Cargo.toml"
+	],
+	"rust-analyzer.cargo.target": "loongarch64-unknown-none",
+	"rust-analyzer.cargo.features": [
+	    "loongson_7a2000 loongson_3a6000 loongson_uart pci"
+	]
+}
