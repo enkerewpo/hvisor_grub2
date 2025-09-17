@@ -4,6 +4,3 @@
 [submodule "hvisor"]
 	path = hvisor
 	url = https://github.com/enkerewpo/hvisor
-[submodule "grub2"]
-	path = grub2
-	url = https://github.com/enkerewpo/grub2
