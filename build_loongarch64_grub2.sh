@@ -123,9 +123,10 @@ generate_efi_image() {
     mkdir -p "$efi_dir"
     
     # Use grub-mkimage to generate EFI image
-    if [ -f "./grub-core/grub-mkimage" ]; then
-        ./grub-core/grub-mkimage \
+    if [ -f "./grub-mkimage" ]; then
+        ./grub-mkimage \
             --format=loongarch64-efi \
+            --directory=./grub-core \
             --output="$efi_dir/grub.efi" \
             --prefix='(hd0,gpt1)/boot/grub' \
             --compression=xz \
@@ -151,21 +152,15 @@ generate_efi_image() {
             font \
             gfxterm \
             gfxmenu \
-            gfxpayload \
             terminal \
             serial \
-            usb \
-            keyboard \
             acpi \
             halt \
             reboot \
             memdisk \
             tar \
             ls \
-            cat \
-            cpuid \
-            rdrand \
-            relocator
+            cat
     
         log_success "EFI image generation completed: $efi_dir/grub.efi"
     else
